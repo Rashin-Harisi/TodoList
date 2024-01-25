@@ -7,7 +7,7 @@ import './layout.css';
 
 const Layout = ({children})=>{
     return (
-        <div className='container'>
+        <div className='wholeApp'>
           <Header/>
           {children}
           <Footer/>  

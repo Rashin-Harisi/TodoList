@@ -1,6 +1,6 @@
-.container{
+.wholeApp{
     border: 1px solid black;
-    width: 500px;
+    width: 400px;
     height: 300px;
     position: absolute;
     left: 50%;
