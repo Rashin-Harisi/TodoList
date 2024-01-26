@@ -1,0 +1,15 @@
+.todoApp .addButton:hover{
+    background-color: green;
+    color: white;
+    border: 1px solid green;
+    cursor: pointer;
+    transition-duration: 500ms;
+}
+.form-control:focus{
+    border-color: green;
+    outline: none;
+    box-shadow: none;
+}
+.tasksList{
+    height: 100px;
+}

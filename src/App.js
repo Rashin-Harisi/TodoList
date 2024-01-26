@@ -9,6 +9,7 @@ function App() {
       <Layout>
         <ToDo/>
       </Layout>
+      <div className='designerName'>Designed by @Rashin </div>
 
     </div>
   );

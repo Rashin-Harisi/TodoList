@@ -1,4 +1,13 @@
 .App {
   text-align: center;
   font-family: Apple Chancery , cursive;
+  max-width: 550px;
+  min-width: 320px;
 } 
+.designerName{
+  position: absolute;
+  left: 57%;
+  top: 90%;
+  transform: translate(-90%);
+  font-size: 12px;
+}

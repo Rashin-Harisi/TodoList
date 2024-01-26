@@ -1,0 +1,31 @@
+.deleteButton{
+    border: none;
+    background-color: white;
+    
+}
+.tasksItem{
+    width: 100%;
+    position: absolute;
+    left: 0;
+   
+}
+.tasksItem li{
+    display: flex;
+    align-items: center; 
+}
+.tasksItem input{
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.tasksItem p{
+    width: 100%;
+    text-align:left
+}
+.tasksItem button{
+    width: 30px;
+}
+.tasksItem button:hover{
+   color: red;
+}
