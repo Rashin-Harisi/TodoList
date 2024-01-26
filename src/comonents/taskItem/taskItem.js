@@ -5,13 +5,11 @@ import './taskItem.css';
 
 const TaskItem =()=>{
     return(
-        <div className='tasksItem'>
-            <li>
+            <li className='tasksItem'>
                     <input type='checkbox' />
-                    <p style={{fontSize:'12px', height:'5px', }}> Working on React projects</p>
+                    <p> Working on React projects</p>
                     <Button className='deleteButton' variant="light" size='sm'><FaTrashAlt/></Button>
             </li>
-        </div>
     )
 };
 

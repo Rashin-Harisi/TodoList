@@ -7,11 +7,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Footer = () => {
     return (
         <div className='footer'>
-            <Row style={{ width:'400px', marginTop:'10px'}}>
-                <Col>
+            <Row className='footerFilter'style={{ width:'100%', marginTop:'10px', marginLeft:'0'}}>
+                <Col className='footerFilter__countItems' >
                     <div>1 item</div>
                 </Col>
-                <Col>
+                <Col className='footerFilter__buttonFilter' >
                     <ButtonGroup aria-label="Basic example">
                         <Button variant="outline-primary" size="sm">All</Button>
                         <Button variant="outline-danger" size="sm">Active</Button>

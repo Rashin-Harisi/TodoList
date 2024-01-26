@@ -11,5 +11,8 @@
     box-shadow: none;
 }
 .tasksList{
-    height: 100px;
+    max-height: 100px;
+    overflow: auto;
+    width: 100%;
+    padding: 0;
 }

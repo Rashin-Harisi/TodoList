@@ -5,13 +5,10 @@
 }
 .tasksItem{
     width: 100%;
-    position: absolute;
     left: 0;
-   
-}
-.tasksItem li{
     display: flex;
-    align-items: center; 
+    align-items: center;  
+    border-bottom: 1px solid #686de0;
 }
 .tasksItem input{
     width: 30px;
@@ -21,7 +18,9 @@
 }
 .tasksItem p{
     width: 100%;
-    text-align:left
+    text-align:left;
+    font-size: 12px;
+    height:5px;
 }
 .tasksItem button{
     width: 30px;

@@ -27,8 +27,11 @@ const ToDo = () => {
             </div>
             <div>
                 <ul className='tasksList'>
-                    <TaskItem/>
-                    <TaskItem/>
+                    <TaskItem />
+                    <TaskItem />
+                    <TaskItem />
+                    <TaskItem />
+                    <TaskItem />
                 </ul>
             </div>
 
