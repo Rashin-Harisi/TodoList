@@ -5,12 +5,12 @@ import './layout.css';
 
 
 
-const Layout = ({children})=>{
+const Layout = ({children,tasks})=>{
     return (
         <div className='wholeApp'>
           <Header/>
           {children}
-          <Footer/>  
+          <Footer tasks={tasks}/>  
         </div>
     )
 };

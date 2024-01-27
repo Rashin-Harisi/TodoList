@@ -4,12 +4,12 @@ import { Button, ButtonGroup, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const Footer = () => {
+const Footer = ({tasks}) => {
     return (
         <div className='footer'>
             <Row className='footerFilter'style={{ width:'100%', marginTop:'10px', marginLeft:'0'}}>
                 <Col className='footerFilter__countItems' >
-                    <div>1 item</div>
+                    <div>{tasks.length} items</div>
                 </Col>
                 <Col className='footerFilter__buttonFilter' >
                     <ButtonGroup aria-label="Basic example">
