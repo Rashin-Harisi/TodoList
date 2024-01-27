@@ -6,7 +6,11 @@ import ToDo from './comonents/todoApp/todo';
 import { v4 as uuidv4 } from 'uuid';
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState([]);
+  const [filterParent,setFilterParent] = useState('all');
+  const [filteredTasks,setFilteredTasks] = useState ([]);
+  const [fresh, setFresh] = useState(0);
+
 
   useEffect(() => {
     setTasks([
@@ -22,6 +26,20 @@ function App() {
       }
     ])
   }, [])
+  useEffect(() => {
+    if(filterParent === 'all'){
+      setFilteredTasks(tasks)
+    }
+    if(filterParent === 'active'){
+       const newActiveTasks= tasks.filter(task => !task.status)
+       setFilteredTasks(newActiveTasks)
+    }
+    if(filterParent === 'completed'){
+      const newCompletedTasks= tasks.filter(task => task.status)
+      setFilteredTasks(newCompletedTasks)
+   }
+  }, [filterParent,tasks,fresh])
+
 
   const addTask = (taskTitle) => {
     setTasks([
@@ -42,10 +60,18 @@ function App() {
     const newTasksList= tasks.filter ((task)=> task.id !== taskId)
     setTasks(newTasksList)
   }
+
+  const handelChangeStatus=(taskId)=>{
+    let newTaskList = tasks;
+    const taskIndex= tasks.findIndex((task)=> task.id===taskId);
+    newTaskList[taskIndex].status = !newTaskList[taskIndex].status;
+    setTasks(newTaskList)
+    setFresh(fresh+1)
+  }
   return (
     <div className="App">
-      <Layout tasks={tasks}>
-        <ToDo tasks={tasks} addTask={addTask} deleteTask={deleteTask} />
+      <Layout tasks={tasks} setFilterParent={setFilterParent} filteredTasks={filteredTasks}>
+        <ToDo tasks={filteredTasks} addTask={addTask} deleteTask={deleteTask}  handelChangeStatus={handelChangeStatus} />
       </Layout>
       <div className='designerName'>Designed by @Rashin </div>
 

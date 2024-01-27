@@ -6,7 +6,7 @@ import TaskItem from '../taskItem/taskItem';
 
 
 
-const ToDo = ({tasks, addTask,deleteTask}) => {
+const ToDo = ({tasks, addTask,deleteTask,handelChangeStatus}) => {
     const [value,setValue]=useState("")
     
     const handleChange= (event)=>{
@@ -42,7 +42,7 @@ const ToDo = ({tasks, addTask,deleteTask}) => {
             </div>
             <div>
                 <ul className='tasksList'>
-                    {tasks.map(task => <TaskItem key={task.id} task={task} deleteTask={deleteTask}/>)}                    
+                    {tasks.map(task => <TaskItem key={task.id} task={task} deleteTask={deleteTask} handelChangeStatus={handelChangeStatus}/>)}                    
                 </ul>
             </div>
 

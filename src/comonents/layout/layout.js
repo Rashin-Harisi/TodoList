@@ -5,12 +5,12 @@ import './layout.css';
 
 
 
-const Layout = ({children,tasks})=>{
+const Layout = ({children,tasks,setFilterParent,filteredTasks})=>{
     return (
         <div className='wholeApp'>
           <Header/>
           {children}
-          <Footer tasks={tasks}/>  
+          <Footer tasks={tasks} setFilterParent={setFilterParent} filteredTasks={filteredTasks}/>  
         </div>
     )
 };
