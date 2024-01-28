@@ -13,18 +13,11 @@ function App() {
 
 
   useEffect(() => {
-    setTasks([
-      {
-        id: uuidv4(),
-        title: 'Default task',
-        status: true, //Boolean
-      },
-      {
-        id: uuidv4(),
-        title: 'Default task number2',
-        status: false, //Boolean
-      }
-    ])
+    let storedTasks = localStorage.getItem('tasks');
+    if(storedTasks){
+      storedTasks= JSON.parse(storedTasks)
+    }
+    setTasks(storedTasks)
   }, [])
   useEffect(() => {
     if(filterParent === 'all'){
@@ -42,14 +35,16 @@ function App() {
 
 
   const addTask = (taskTitle) => {
-    setTasks([
+    const newTasks=[
       ...tasks,
       {
         id: uuidv4(),
         title: taskTitle,
         status: false,
       },
-    ])
+    ];
+    setTasks(newTasks);
+    localStorage.setItem('tasks',JSON.stringify(newTasks));// to save data in local storage to avoid missing data by refreshing the page.
   }
 
   const deleteTask=(taskId)=>{
@@ -59,6 +54,7 @@ function App() {
     by this method React shows unexpected reaction and the code did not work , I get This Error: Uncaught TypeError: Cannot read properties of undefined (reading 'id')*/
     const newTasksList= tasks.filter ((task)=> task.id !== taskId)
     setTasks(newTasksList)
+    localStorage.setItem('tasks',JSON.stringify(newTasksList));
   }
 
   const handelChangeStatus=(taskId)=>{
@@ -66,6 +62,7 @@ function App() {
     const taskIndex= tasks.findIndex((task)=> task.id===taskId);
     newTaskList[taskIndex].status = !newTaskList[taskIndex].status;
     setTasks(newTaskList)
+    localStorage.setItem('tasks',JSON.stringify(newTaskList));
     setFresh(fresh+1)
   }
   return (
